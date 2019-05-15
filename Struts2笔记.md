@@ -158,7 +158,7 @@ public class MyAction extends ActionSupport {
     </package>
 </struts>
 ```
-####在Action中怎么访问一些常用的实例  
+####  在Action中怎么访问一些常用的实例  
 在Action中，我们要取得像pageContext、request、response、servletContext该写什么语句呢？  
 
 ```java
