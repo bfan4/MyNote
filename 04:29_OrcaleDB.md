@@ -1,7 +1,7 @@
 04/29/2017  
 
 
-```
+```bash
 docker pull xrdj6c/oracle-11g-xe
 ```
 # How-To: Install and Use docker pull xrdj6c/oracle-11g-xe
@@ -17,7 +17,7 @@ url: http://localhost:8080/apex workspace: INTERNAL user: ADMIN password: oracle
 
 ssh root@localhost -p 49160 password: admin OR sudo docker exec -i -t bash
 
-```
+```bash
 docker pull xrdj6c/oracle-11g-xe
 docker run -d -p 49160:22 -p 1521:1521 -p 49162:8080 xrdj6c/oracle-11g-xe
 docker exec -it <container-id> bash
@@ -30,7 +30,7 @@ docker exec -it <container-id> bash
 
 # IN & OUT
 
-```
+```sql
 create procedure sp1 as
 	begin
   	update users set username='jsmith' where id= 10;
@@ -40,7 +40,7 @@ create procedure sp1 as
 ####invoke with ```call```
 ---
 
-```
+```sql
 create or replace procedure sp2 ( str IN string, uid IN number) 
 is begin
 update users set password = str where id = uid;
@@ -49,7 +49,7 @@ end;
 ``` 
 ####invoke with ```exec```
 ---
-```
+```sql
 create of replace procedure sp3( n1 IN number, n2 IN number, n3 OUT number) as
 begin
 n3 := n1 * n2;
@@ -57,10 +57,10 @@ end;
 /
 ```
 ####invoke with
-```
+```sql
 set serveroutput ON;  //set the server ouput ON first
 ```
-```
+```sql
 declare num number;
 begin
 sp3(15, 20, num);
